@@ -1,5 +1,5 @@
 var mysql = require("mysql");
-var inquirer = require("inquirer");
+var cms = require("./apps/app.js")
 
 var connection = mysql.createConnection({
   host: "localhost",
@@ -17,24 +17,24 @@ var connection = mysql.createConnection({
 
 connection.connect(function(err) {
   if (err) throw err;
-  createDepartment();
 });
 
-function createDepartment() {
-  console.log("Inserting a new department...\n");
-  var query = connection.query(
-    "INSERT INTO department SET ?",
-    {
-      name: "IT"
-    },
-    function(err, res) {
-      if (err) throw err;
-      console.log(res.affectedRows + " department inserted!\n");
-    }
-  );
+console.log(cms.employeeTracker());
+// function createDepartment() {
+//   console.log("Inserting a new department...\n");
+//   var query = connection.query(
+//     "INSERT INTO department SET ?",
+//     {
+//       name: "IT"
+//     },
+//     function(err, res) {
+//       if (err) throw err;
+//       console.log(res.affectedRows + " department inserted!\n");
+//     }
+//   );
 
   // logs the actual query being run
-  console.log(query.sql);
-}
+//   console.log(query.sql);
+// }
 
 
