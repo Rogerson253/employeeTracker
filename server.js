@@ -19,7 +19,8 @@ connection.connect(function(err) {
   if (err) throw err;
 });
 
-console.log(cms.employeeTracker());
+cms.employeeTracker();
+
 // function createDepartment() {
 //   console.log("Inserting a new department...\n");
 //   var query = connection.query(
