@@ -1,5 +1,5 @@
 var mysql = require("mysql");
-var cms = require("./apps/app.js")
+// var cms = require("./apps/app.js")
 
 var connection = mysql.createConnection({
   host: "localhost",
@@ -19,7 +19,7 @@ connection.connect(function(err) {
   if (err) throw err;
 });
 
-cms.employeeTracker();
+// cms.employeeTracker();
 
 // function createDepartment() {
 //   console.log("Inserting a new department...\n");

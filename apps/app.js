@@ -30,7 +30,21 @@ var employeeTracker = () => {
                 message: "What is the employee's last name?"
             }
         ]).then((name) => {
-            console.log(name);
+            console.log(name.first);
+            function createEmployee() {
+              console.log("Creating new employee...\n");
+              var query = connection.query(
+                "INSERT INTO department SET ?",
+              {
+                first: name.first,
+                last: name.last
+              },
+              function(err, res) {
+                if (err) throw err;
+                console.log(res.affectedRows + " employee inserted!\n");
+              }
+              );
+            };
         })
       }
       });
